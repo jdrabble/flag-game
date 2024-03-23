@@ -27,7 +27,7 @@ A player needs to drag and drop each of the randomly displayed country flags ont
 
 ## Wireframe
 
-![Wireframe!] (/drabs/desktop/wireframe.png)
+![wireframe!](./wireframe.png "wireframe")
 
 ## Technologies
 
