@@ -9,13 +9,23 @@
     --darkgreen: rgb(43, 93, 95);
 }
 
-.messages {
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     font-size: 16px;
 }
 
 .flags {
     display: grid;
     grid-template-columns: auto auto auto auto auto;
+}
+
+.flags>div {
+    height: 450px;
+    width: 450px;
+    border: 1px solid black;
 }
 
 .gameBoard {
@@ -28,6 +38,9 @@
 }
 
 .gameBoard>div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 150px;
     width: 150px;
     border: 1px solid black;
@@ -36,7 +49,7 @@
 button {
     background-color: var(--darkgreen);
     color: white;
-    font-size:16px;
+    font-size: 16px;
     border-radius: 10px;
     height: 30px;
     width: 125px;
