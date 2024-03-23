@@ -1,0 +1,23 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+  }
+
+.messages{
+    font-size: 16px;
+}
+
+.flags{
+    display: grid;
+}
+
+.gameBoard{
+    display: grid;
+}
+
+button{
+    background-color: red;
+}
+
