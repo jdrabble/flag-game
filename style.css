@@ -19,13 +19,19 @@
 
 .flags {
     display: grid;
-    grid-template-columns: auto auto auto auto auto;
+    grid-template-columns: auto auto auto;
+    margin: 0 auto;
+    width: 450px;
 }
 
 .flags>div {
-    height: 450px;
-    width: 450px;
-    border: 1px solid black;
+    width: 128px;
+    height: 96px;
+    margin: 10px;
+}
+
+.dragging {
+    opacity: 0.25;
 }
 
 .gameBoard {
@@ -41,10 +47,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    padding: 5px;
     height: 150px;
     width: 150px;
     border: 1px solid black;
-    font-size: 16px;
 }
 
 button {
@@ -54,4 +61,10 @@ button {
     border-radius: 10px;
     height: 30px;
     width: 125px;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
