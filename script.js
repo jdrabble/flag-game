@@ -270,7 +270,16 @@ const sortedCountries = arrayCountries.sort(() => Math.random() - 0.5);
 
 const shortList = sortedCountries.splice(0, 9);
 
-//console.log(shortList);
+let shortListReshuffled = [];
+
+shortList.forEach(function (item) {
+  shortListReshuffled.push(item);
+  shortListReshuffled.sort(() => Math.random() - 0.5);
+});
+
+console.log(shortList);
+console.log(shortListReshuffled);
+
 
 const btn = document.querySelector('button');
 const cells = document.querySelectorAll('.gameBoard div');
@@ -291,10 +300,12 @@ for (i = 0; i < shortList.length; i++) {
   flag.innerHTML = `<img
   src="https://flagcdn.com/128x96/${shortList[i][0]}.png">`;
   flags.appendChild(flag);
- 
-  cells[i].setAttribute('id', shortList[i][0]);
+}
+
+for (i = 0; i < shortListReshuffled.length; i++) {
+  cells[i].setAttribute('id', shortListReshuffled[i][0]);
   cells[i].setAttribute('class', 'droppable');
-  cells[i].innerHTML = `<h4>${shortList[i][1]}</h4>`
+  cells[i].innerHTML = `<h4>${shortListReshuffled[i][1]}</h4>`
     }
 
 let secondsAllowed = 31;
