@@ -313,7 +313,7 @@ for (i = 0; i < shortList.length; i++) {
   flag.setAttribute('data-country', shortList[i][1]);
   flag.setAttribute('class', 'draggable');
   flag.setAttribute('draggable', 'true');
-  flag.src = `https://flagcdn.com/128x96/${shortList[i][0]}.png`;
+  flag.src = `https://flagcdn.com/112x84/${shortList[i][0]}.png`;
   flag.addEventListener("dragstart", dragStart);
   //flag.addEventListener("drag", drag);
   flag.addEventListener("dragend", dragEnd);
@@ -332,7 +332,7 @@ for (i = 0; i < shortListReshuffled.length; i++) {
 
 function startCountDown (){
   secondsAllowed--;
-  console.log(secondsAllowed, correct);
+  //console.log(secondsAllowed, correct);
   if (secondsAllowed === 0 && correct <9){
     console.log("time over due to out of time");
     message.style.color = "red"
@@ -368,10 +368,10 @@ function dragEnd(e){
 }
 
 function dragOver(e){
-  if(!e.target.classList.contains("dropped")){
+  //if(!e.target.classList.contains("dropped")){
   e.preventDefault();
   console.log('dragover');
-}
+//}
 }
 
 function drop(e){
@@ -407,7 +407,7 @@ function drop(e){
 
 function winCheck() {
   if (correct === 9 && secondsAllowed >0) {
-    console.log("game completed", secondsAllowed );
+    //console.log("game completed", secondsAllowed );
     message.style.color = "green"
     message.innerText = "Congratulations, you win!"
   //   setTimeout(function(){
