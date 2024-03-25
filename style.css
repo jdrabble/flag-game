@@ -5,10 +5,6 @@
     margin: 0;
   }
 
-:root {
-    --darkgreen: rgb(43, 93, 95);
-}
-
 .container {
     display: grid;
     grid-template-columns: 1fr;
@@ -26,6 +22,31 @@ header {
     justify-content: center;
     align-items: center;
     margin: 10px;
+}
+
+#timer {
+    font-size: 20px;
+    margin: 5px;
+}
+
+#score {
+    font-size: 20px;
+    margin: 5px;
+}
+
+#message {
+    font-size: 25px;
+    font-weight: bold;
+    margin: 5px;
+}
+
+button {
+    background-color: darkgreen;
+    color: white;
+    font-size: 16px;
+    border-radius: 10px;
+    height: 30px;
+    width: 125px;
 }
 
 .flags {
@@ -73,34 +94,9 @@ header {
     border: 1px solid black;
 }
 
-button {
-    background-color: var(--darkgreen);
-    color: white;
-    font-size: 16px;
-    border-radius: 10px;
-    height: 30px;
-    width: 125px;
-}
-
 footer {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 10px;
-}
-
-#timer {
-    font-size: 20px;
-    margin: 5px;
-}
-
-#score {
-    font-size: 20px;
-    margin: 5px;
-}
-
-#message {
-    font-size: 25px;
-    font-weight: bold;
-    margin: 5px;
 }

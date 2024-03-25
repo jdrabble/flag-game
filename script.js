@@ -1,7 +1,3 @@
-// import data from './data.json' assert { type: 'json'};
-
-// console.log(data);
-
 const countries = {
   "ad": "Andorra",
   "ae": "United Arab Emirates",
@@ -283,6 +279,7 @@ shortList.forEach(item => {
 //console.log(shortListReshuffled);
 
 let correct = 0;
+let secondsAllowed = 61;
 
 const btn = document.querySelector('button');
 const cells = document.querySelectorAll('.gameBoard div');
@@ -332,17 +329,22 @@ for (i = 0; i < shortListReshuffled.length; i++) {
   //cells[i].addEventListener("dragleave", dragLeave);
   cells[i].addEventListener("drop", drop);
     }
-  
-let secondsAllowed = 5;
 
 function startCountDown (){
   secondsAllowed--;
-  //console.log(secondsAllowed);
-  if (secondsAllowed === 0){
-    console.log("time over");
+  console.log(secondsAllowed, correct);
+  if (secondsAllowed === 0 && correct <9){
+    console.log("time over due to out of time");
     message.style.color = "red"
     message.innerText = "Out of time, game over!"
     clearInterval(clock);
+    stopGame();
+  }
+  else if (correct === 9){
+    console.log("time over due to winner");
+    clearInterval(clock);
+    // message.style.color = "green"
+    // message.innerText = "Congratulations, you win!"
     stopGame();
   }
   timer.innerHTML = `Seconds remaining: ${secondsAllowed}`;
@@ -386,9 +388,9 @@ function drop(e){
    message.style.color = "green"
    message.innerText = "Correct answer!"
    score.innerText = `Completed score: ${Math.round((correct/9)*100)}%`;
-   setTimeout(function(){
-    message.innerText = "";
-}, 1000);
+//    setTimeout(function(){
+//     message.innerText = "";
+// }, 1000);
    e.target.removeEventListener("drop", drop);
   }
   else if (data !== droppableElementData){
@@ -396,21 +398,21 @@ function drop(e){
     console.log("wrong");
     message.style.color = "red"
     message.innerText = "Wrong answer!"
-    setTimeout(function(){
-      message.innerText = "";
-  }, 1000);
+  //   setTimeout(function(){
+  //     message.innerText = "";
+  // }, 1000);
   }
-  gameScore();
+  winCheck();
 }
 
-function gameScore() {
-  if (correct === 9) {
-    console.log("game completed")
+function winCheck() {
+  if (correct === 9 && secondsAllowed >0) {
+    console.log("game completed", secondsAllowed );
     message.style.color = "green"
     message.innerText = "Congratulations, you win!"
-    setTimeout(function(){
-      message.innerText = "Congratulations, you win!";
-  }, 1000);
+  //   setTimeout(function(){
+  //     message.innerText = "Congratulations, you win!";
+  // }, 1000);
     stopGame();
   }
  }
@@ -418,15 +420,20 @@ function gameScore() {
 function stopGame(){
   console.log("stopGame function called");
 
+  const allFlags = document.querySelectorAll('.flags>img');
+  for (i=0; i<allFlags.length; i++) {
+    allFlags[i].setAttribute('draggable', 'false');
+  }
 
-btn.style.display = "inline";
-btn.innerText = "Restart";
-btn.addEventListener('click', refresh);
+  btn.style.display = "inline";
+  btn.innerText = "Refresh";
+  btn.addEventListener('click', refresh);
+}
 
 function refresh() {
   window.location.reload();
 }
-}
+
 
 
 
