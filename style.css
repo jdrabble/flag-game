@@ -9,25 +9,42 @@
     --darkgreen: rgb(43, 93, 95);
 }
 
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    margin-top: 10px;
+}
+
+header {
+    margin: 0 auto;
+}
+
 .dashboard {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 16px;
+    margin: 10px;
 }
 
 .flags {
-    display: grid;
-    grid-template-columns: auto auto auto;
+    /* display: grid;
+    grid-template-columns: auto auto auto; */
+    display: flex;
+    flex-wrap: wrap;
     margin: 0 auto;
     width: 450px;
 }
 
-.flags>div {
+.flags>img {
     width: 128px;
     height: 96px;
     margin: 10px;
+}
+
+.draggble {
+    cursor: grab;
 }
 
 .dragging {
@@ -35,11 +52,13 @@
 }
 
 .gameBoard {
-    display: grid;
-    grid-template-columns: auto auto auto;
+    /* display: grid;
+    grid-template-columns: auto auto auto; */
+    display: flex;
+    flex-wrap: wrap;
     margin: 0 auto;
-    height: 450px;
-    width: 450px;
+    height: 452px;
+    width: 452px;
     border: 1px solid black;
 }
 
@@ -67,4 +86,21 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 10px;
+}
+
+#timer {
+    font-size: 20px;
+    margin: 5px;
+}
+
+#score {
+    font-size: 20px;
+    margin: 5px;
+}
+
+#message {
+    font-size: 25px;
+    font-weight: bold;
+    margin: 5px;
 }

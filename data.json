@@ -1,4 +1,4 @@
-countries = {
+{
     "ad": "Andorra",
     "ae": "United Arab Emirates",
     "af": "Afghanistan",
@@ -255,5 +255,4 @@ countries = {
     "zw": "Zimbabwe"
   }
 
-export { countries };
   

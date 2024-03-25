@@ -1,4 +1,6 @@
-//import { countries } from './data';
+// import data from './data.json' assert { type: 'json'};
+
+// console.log(data);
 
 const countries = {
   "ad": "Andorra",
@@ -272,19 +274,22 @@ const shortList = sortedCountries.splice(0, 9);
 
 let shortListReshuffled = [];
 
-shortList.forEach(function (item) {
+shortList.forEach(item => {
   shortListReshuffled.push(item);
   shortListReshuffled.sort(() => Math.random() - 0.5);
 });
 
-console.log(shortList);
-console.log(shortListReshuffled);
+//console.log(shortList);
+//console.log(shortListReshuffled);
 
+let correct = 0;
 
 const btn = document.querySelector('button');
 const cells = document.querySelectorAll('.gameBoard div');
 const flags = document.querySelector('.flags');
 const timer = document.querySelector('#timer');
+const message = document.querySelector('#message');
+const score = document.querySelector('#score');
 
 btn.addEventListener('click', render);
 
@@ -292,30 +297,53 @@ function render(){
 // console.log(e.target.id);
 // console.log(cells);
 
+// for (i = 0; i < shortList.length; i++) {
+//   const flag = document.createElement('div');
+//   flag.setAttribute('id', shortList[i][0]);
+//   flag.setAttribute('class', 'draggable');
+//   flag.setAttribute('draggable', 'true');
+//   flag = `<img class="draggable" draggable="true" id="${shortList[i][0]}"
+//   src="https://flagcdn.com/128x96/${shortList[i][0]}.png">`;
+//   flag.addEventListener("dragstart", dragStart);
+//   flag.addEventListener("drag", drag);
+//   flag.addEventListener("dragend", dragEnd);
+//   flags.appendChild(flag);
+// }
+
 for (i = 0; i < shortList.length; i++) {
-  const flag = document.createElement('div');
+  const flag = document.createElement('img');
   flag.setAttribute('id', shortList[i][0]);
+  flag.setAttribute('data-country', shortList[i][1]);
   flag.setAttribute('class', 'draggable');
   flag.setAttribute('draggable', 'true');
-  flag.innerHTML = `<img
-  src="https://flagcdn.com/128x96/${shortList[i][0]}.png">`;
+  flag.src = `https://flagcdn.com/128x96/${shortList[i][0]}.png`;
+  flag.addEventListener("dragstart", dragStart);
+  //flag.addEventListener("drag", drag);
+  flag.addEventListener("dragend", dragEnd);
   flags.appendChild(flag);
 }
 
 for (i = 0; i < shortListReshuffled.length; i++) {
   cells[i].setAttribute('id', shortListReshuffled[i][0]);
   cells[i].setAttribute('class', 'droppable');
-  cells[i].innerHTML = `<h4>${shortListReshuffled[i][1]}</h4>`
+  cells[i].innerHTML = `${shortListReshuffled[i][1]}`
+  //cells[i].addEventListener("dragenter", dragEnter);
+  cells[i].addEventListener("dragover", dragOver);
+  //cells[i].addEventListener("dragleave", dragLeave);
+  cells[i].addEventListener("drop", drop);
     }
-
-let secondsAllowed = 31;
+  
+let secondsAllowed = 5;
 
 function startCountDown (){
   secondsAllowed--;
   //console.log(secondsAllowed);
   if (secondsAllowed === 0){
-    //console.log("out of time");
+    console.log("time over");
+    message.style.color = "red"
+    message.innerText = "Out of time, game over!"
     clearInterval(clock);
+    stopGame();
   }
   timer.innerHTML = `Seconds remaining: ${secondsAllowed}`;
 };
@@ -326,6 +354,79 @@ btn.style.display = "none";
 
 };
 
+function dragStart(e) {
+  e.dataTransfer.setData('text/plain', e.target.id);
+  e.target.classList.add("dragging");
+  console.log('dragstart');
+}
+
+function dragEnd(e){
+  e.target.classList.remove("dragging");
+  console.log('dragend');
+}
+
+function dragOver(e){
+  if(!e.target.classList.contains("dropped")){
+  e.preventDefault();
+  console.log('dragover');
+}
+}
+
+function drop(e){
+  e.preventDefault();
+  console.log(drop);
+  droppableElementData = e.target.getAttribute("id");
+  const data = e.dataTransfer.getData('text/plain');
+  if (data === droppableElementData){
+  e.target.innerText = "";
+  e.target.style.border = "3px solid green";
+   e.target.appendChild(document.getElementById(data));
+   correct++;
+   console.log(correct);
+   message.style.color = "green"
+   message.innerText = "Correct answer!"
+   score.innerText = `Completed score: ${Math.round((correct/9)*100)}%`;
+   setTimeout(function(){
+    message.innerText = "";
+}, 1000);
+   e.target.removeEventListener("drop", drop);
+  }
+  else if (data !== droppableElementData){
+    e.target.style.border = "3px solid red";
+    console.log("wrong");
+    message.style.color = "red"
+    message.innerText = "Wrong answer!"
+    setTimeout(function(){
+      message.innerText = "";
+  }, 1000);
+  }
+  gameScore();
+}
+
+function gameScore() {
+  if (correct === 9) {
+    console.log("game completed")
+    message.style.color = "green"
+    message.innerText = "Congratulations, you win!"
+    setTimeout(function(){
+      message.innerText = "Congratulations, you win!";
+  }, 1000);
+    stopGame();
+  }
+ }
+
+function stopGame(){
+  console.log("stopGame function called");
+
+
+btn.style.display = "inline";
+btn.innerText = "Restart";
+btn.addEventListener('click', refresh);
+
+function refresh() {
+  window.location.reload();
+}
+}
 
 
 

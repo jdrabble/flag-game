@@ -5,31 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Flags of the world game</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
+    <!-- <script type="module" src="script.js" defer></script> -->
     <script src="script.js" defer></script>
   </head>
 
   <body>
-    <div class="dashboard">
-      <h1>Flags of the world game</h1>
-      <p id="timer"></p>
+    <div class="container">
+      <header><h1>Flags of the world game</h1></header>
+      <div class="dashboard">
+        <p id="timer"></p>
+        <p id="score"></p>
+        <p id="message"></p>
 
-      <button id="btn">Play Game</button>
+        <button id="btn">Play New Game</button>
+      </div>
+
+      <div class="flags"></div>
+
+      <div class="gameBoard">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+
+      <footer>Source:<a href="https://flagpedia.net"> flagpedia.net</a></footer>
     </div>
-
-    <div class="flags"></div>
-
-    <div class="gameBoard">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-
-    <footer>Source: <a href="https://flagpedia.net">flagpedia.net</a></footer>
   </body>
 </html>
