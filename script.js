@@ -1,262 +1,5 @@
-const countries = {
-  "ad": "Andorra",
-  "ae": "United Arab Emirates",
-  "af": "Afghanistan",
-  "ag": "Antigua and Barbuda",
-  "ai": "Anguilla",
-  "al": "Albania",
-  "am": "Armenia",
-  "ao": "Angola",
-  "aq": "Antarctica",
-  "ar": "Argentina",
-  "as": "American Samoa",
-  "at": "Austria",
-  "au": "Australia",
-  "aw": "Aruba",
-  "ax": "Åland Islands",
-  "az": "Azerbaijan",
-  "ba": "Bosnia and Herzegovina",
-  "bb": "Barbados",
-  "bd": "Bangladesh",
-  "be": "Belgium",
-  "bf": "Burkina Faso",
-  "bg": "Bulgaria",
-  "bh": "Bahrain",
-  "bi": "Burundi",
-  "bj": "Benin",
-  "bl": "Saint Barthélemy",
-  "bm": "Bermuda",
-  "bn": "Brunei",
-  "bo": "Bolivia",
-  "bq": "Caribbean Netherlands",
-  "br": "Brazil",
-  "bs": "Bahamas",
-  "bt": "Bhutan",
-  "bv": "Bouvet Island",
-  "bw": "Botswana",
-  "by": "Belarus",
-  "bz": "Belize",
-  "ca": "Canada",
-  "cc": "Cocos (Keeling) Islands",
-  "cd": "DR Congo",
-  "cf": "Central African Republic",
-  "cg": "Republic of the Congo",
-  "ch": "Switzerland",
-  "ci": "Côte d'Ivoire (Ivory Coast)",
-  "ck": "Cook Islands",
-  "cl": "Chile",
-  "cm": "Cameroon",
-  "cn": "China",
-  "co": "Colombia",
-  "cr": "Costa Rica",
-  "cu": "Cuba",
-  "cv": "Cape Verde",
-  "cw": "Curaçao",
-  "cx": "Christmas Island",
-  "cy": "Cyprus",
-  "cz": "Czechia",
-  "de": "Germany",
-  "dj": "Djibouti",
-  "dk": "Denmark",
-  "dm": "Dominica",
-  "do": "Dominican Republic",
-  "dz": "Algeria",
-  "ec": "Ecuador",
-  "ee": "Estonia",
-  "eg": "Egypt",
-  "eh": "Western Sahara",
-  "er": "Eritrea",
-  "es": "Spain",
-  "et": "Ethiopia",
-  "fi": "Finland",
-  "fj": "Fiji",
-  "fk": "Falkland Islands",
-  "fm": "Micronesia",
-  "fo": "Faroe Islands",
-  "fr": "France",
-  "ga": "Gabon",
-  "gb": "United Kingdom",
-  "gb-eng": "England",
-  "gb-nir": "Northern Ireland",
-  "gb-sct": "Scotland",
-  "gb-wls": "Wales",
-  "gd": "Grenada",
-  "ge": "Georgia",
-  "gf": "French Guiana",
-  "gg": "Guernsey",
-  "gh": "Ghana",
-  "gi": "Gibraltar",
-  "gl": "Greenland",
-  "gm": "Gambia",
-  "gn": "Guinea",
-  "gp": "Guadeloupe",
-  "gq": "Equatorial Guinea",
-  "gr": "Greece",
-  "gs": "South Georgia",
-  "gt": "Guatemala",
-  "gu": "Guam",
-  "gw": "Guinea-Bissau",
-  "gy": "Guyana",
-  "hk": "Hong Kong",
-  "hm": "Heard Island and McDonald Islands",
-  "hn": "Honduras",
-  "hr": "Croatia",
-  "ht": "Haiti",
-  "hu": "Hungary",
-  "id": "Indonesia",
-  "ie": "Ireland",
-  "il": "Israel",
-  "im": "Isle of Man",
-  "in": "India",
-  "io": "British Indian Ocean Territory",
-  "iq": "Iraq",
-  "ir": "Iran",
-  "is": "Iceland",
-  "it": "Italy",
-  "je": "Jersey",
-  "jm": "Jamaica",
-  "jo": "Jordan",
-  "jp": "Japan",
-  "ke": "Kenya",
-  "kg": "Kyrgyzstan",
-  "kh": "Cambodia",
-  "ki": "Kiribati",
-  "km": "Comoros",
-  "kn": "Saint Kitts and Nevis",
-  "kp": "North Korea",
-  "kr": "South Korea",
-  "kw": "Kuwait",
-  "ky": "Cayman Islands",
-  "kz": "Kazakhstan",
-  "la": "Laos",
-  "lb": "Lebanon",
-  "lc": "Saint Lucia",
-  "li": "Liechtenstein",
-  "lk": "Sri Lanka",
-  "lr": "Liberia",
-  "ls": "Lesotho",
-  "lt": "Lithuania",
-  "lu": "Luxembourg",
-  "lv": "Latvia",
-  "ly": "Libya",
-  "ma": "Morocco",
-  "mc": "Monaco",
-  "md": "Moldova",
-  "me": "Montenegro",
-  "mf": "Saint Martin",
-  "mg": "Madagascar",
-  "mh": "Marshall Islands",
-  "mk": "North Macedonia",
-  "ml": "Mali",
-  "mm": "Myanmar",
-  "mn": "Mongolia",
-  "mo": "Macau",
-  "mp": "Northern Mariana Islands",
-  "mq": "Martinique",
-  "mr": "Mauritania",
-  "ms": "Montserrat",
-  "mt": "Malta",
-  "mu": "Mauritius",
-  "mv": "Maldives",
-  "mw": "Malawi",
-  "mx": "Mexico",
-  "my": "Malaysia",
-  "mz": "Mozambique",
-  "na": "Namibia",
-  "nc": "New Caledonia",
-  "ne": "Niger",
-  "nf": "Norfolk Island",
-  "ng": "Nigeria",
-  "ni": "Nicaragua",
-  "nl": "Netherlands",
-  "no": "Norway",
-  "np": "Nepal",
-  "nr": "Nauru",
-  "nu": "Niue",
-  "nz": "New Zealand",
-  "om": "Oman",
-  "pa": "Panama",
-  "pe": "Peru",
-  "pf": "French Polynesia",
-  "pg": "Papua New Guinea",
-  "ph": "Philippines",
-  "pk": "Pakistan",
-  "pl": "Poland",
-  "pm": "Saint Pierre and Miquelon",
-  "pn": "Pitcairn Islands",
-  "pr": "Puerto Rico",
-  "ps": "Palestine",
-  "pt": "Portugal",
-  "pw": "Palau",
-  "py": "Paraguay",
-  "qa": "Qatar",
-  "re": "Réunion",
-  "ro": "Romania",
-  "rs": "Serbia",
-  "ru": "Russia",
-  "rw": "Rwanda",
-  "sa": "Saudi Arabia",
-  "sb": "Solomon Islands",
-  "sc": "Seychelles",
-  "sd": "Sudan",
-  "se": "Sweden",
-  "sg": "Singapore",
-  "sh": "Saint Helena, Ascension and Tristan da Cunha",
-  "si": "Slovenia",
-  "sj": "Svalbard and Jan Mayen",
-  "sk": "Slovakia",
-  "sl": "Sierra Leone",
-  "sm": "San Marino",
-  "sn": "Senegal",
-  "so": "Somalia",
-  "sr": "Suriname",
-  "ss": "South Sudan",
-  "st": "São Tomé and Príncipe",
-  "sv": "El Salvador",
-  "sx": "Sint Maarten",
-  "sy": "Syria",
-  "sz": "Eswatini (Swaziland)",
-  "tc": "Turks and Caicos Islands",
-  "td": "Chad",
-  "tf": "French Southern and Antarctic Lands",
-  "tg": "Togo",
-  "th": "Thailand",
-  "tj": "Tajikistan",
-  "tk": "Tokelau",
-  "tl": "Timor-Leste",
-  "tm": "Turkmenistan",
-  "tn": "Tunisia",
-  "to": "Tonga",
-  "tr": "Turkey",
-  "tt": "Trinidad and Tobago",
-  "tv": "Tuvalu",
-  "tw": "Taiwan",
-  "tz": "Tanzania",
-  "ua": "Ukraine",
-  "ug": "Uganda",
-  "um": "United States Minor Outlying Islands",
-  "us": "United States",
-  "uy": "Uruguay",
-  "uz": "Uzbekistan",
-  "va": "Vatican City (Holy See)",
-  "vc": "Saint Vincent and the Grenadines",
-  "ve": "Venezuela",
-  "vg": "British Virgin Islands",
-  "vi": "United States Virgin Islands",
-  "vn": "Vietnam",
-  "vu": "Vanuatu",
-  "wf": "Wallis and Futuna",
-  "ws": "Samoa",
-  "xk": "Kosovo",
-  "ye": "Yemen",
-  "yt": "Mayotte",
-  "za": "South Africa",
-  "zm": "Zambia",
-  "zw": "Zimbabwe"
-}
-
 //console.log(countries);
-//console.log(Object.keys(countries).length);
+// console.log(Object.keys(countries).length);
 
 const arrayCountries = Object.entries(countries);
 
@@ -279,7 +22,7 @@ shortList.forEach(item => {
 //console.log(shortListReshuffled);
 
 let correct = 0;
-let secondsAllowed = 61;
+let secondsAllowed = 10;
 
 const btn = document.querySelector('button');
 const cells = document.querySelectorAll('.gameBoard div');
@@ -294,19 +37,6 @@ function render(){
 // console.log(e.target.id);
 // console.log(cells);
 
-// for (i = 0; i < shortList.length; i++) {
-//   const flag = document.createElement('div');
-//   flag.setAttribute('id', shortList[i][0]);
-//   flag.setAttribute('class', 'draggable');
-//   flag.setAttribute('draggable', 'true');
-//   flag = `<img class="draggable" draggable="true" id="${shortList[i][0]}"
-//   src="https://flagcdn.com/128x96/${shortList[i][0]}.png">`;
-//   flag.addEventListener("dragstart", dragStart);
-//   flag.addEventListener("drag", drag);
-//   flag.addEventListener("dragend", dragEnd);
-//   flags.appendChild(flag);
-// }
-
 for (i = 0; i < shortList.length; i++) {
   const flag = document.createElement('img');
   flag.setAttribute('id', shortList[i][0]);
@@ -315,7 +45,6 @@ for (i = 0; i < shortList.length; i++) {
   flag.setAttribute('draggable', 'true');
   flag.src = `https://flagcdn.com/112x84/${shortList[i][0]}.png`;
   flag.addEventListener("dragstart", dragStart);
-  //flag.addEventListener("drag", drag);
   flag.addEventListener("dragend", dragEnd);
   flags.appendChild(flag);
 }
@@ -324,13 +53,11 @@ for (i = 0; i < shortListReshuffled.length; i++) {
   cells[i].setAttribute('id', shortListReshuffled[i][0]);
   cells[i].setAttribute('class', 'droppable');
   cells[i].innerHTML = `${shortListReshuffled[i][1]}`
-  //cells[i].addEventListener("dragenter", dragEnter);
   cells[i].addEventListener("dragover", dragOver);
-  //cells[i].addEventListener("dragleave", dragLeave);
   cells[i].addEventListener("drop", drop);
     }
 
-function startCountDown (){
+function countDown (){
   secondsAllowed--;
   //console.log(secondsAllowed, correct);
   if (secondsAllowed === 0 && correct <9){
@@ -343,14 +70,14 @@ function startCountDown (){
   else if (correct === 9){
     console.log("time over due to winner");
     clearInterval(clock);
-    // message.style.color = "green"
-    // message.innerText = "Congratulations, you win!"
+    message.style.color = "green"
+    message.innerText = "Congratulations, you win!"
     stopGame();
   }
   timer.innerHTML = `Seconds remaining: ${secondsAllowed}`;
 };
 
-const clock = setInterval(startCountDown, 1000);
+const clock = setInterval(countDown, 1000);
 
 btn.style.display = "none";
 
@@ -368,10 +95,8 @@ function dragEnd(e){
 }
 
 function dragOver(e){
-  //if(!e.target.classList.contains("dropped")){
   e.preventDefault();
   console.log('dragover');
-//}
 }
 
 function drop(e){
@@ -379,7 +104,7 @@ function drop(e){
   console.log(drop);
   droppableElementData = e.target.getAttribute("id");
   const data = e.dataTransfer.getData('text/plain');
-  if (data === droppableElementData){
+  if (data === droppableElementData && secondsAllowed !== 0){
   e.target.innerText = "";
   e.target.style.border = "3px solid green";
    e.target.appendChild(document.getElementById(data));
@@ -388,34 +113,26 @@ function drop(e){
    message.style.color = "green"
    message.innerText = "Correct answer!"
    score.innerText = `Completed score: ${Math.round((correct/9)*100)}%`;
-//    setTimeout(function(){
-//     message.innerText = "";
-// }, 1000);
    e.target.removeEventListener("drop", drop);
   }
-  else if (data !== droppableElementData){
+  else if (data !== droppableElementData && secondsAllowed !== 0){
     e.target.style.border = "3px solid red";
     console.log("wrong");
     message.style.color = "red"
     message.innerText = "Wrong answer!"
-  //   setTimeout(function(){
-  //     message.innerText = "";
-  // }, 1000);
+    score.innerText = `Completed score: ${Math.round((correct/9)*100)}%`;
   }
-  winCheck();
+  //winCheck();
 }
 
-function winCheck() {
-  if (correct === 9 && secondsAllowed >0) {
-    //console.log("game completed", secondsAllowed );
-    message.style.color = "green"
-    message.innerText = "Congratulations, you win!"
-  //   setTimeout(function(){
-  //     message.innerText = "Congratulations, you win!";
-  // }, 1000);
-    stopGame();
-  }
- }
+// function winCheck() {
+//   if (correct === 9 && secondsAllowed >0) {
+//     console.log("game completed", secondsAllowed );
+//     message.style.color = "green"
+//     message.innerText = "Congratulations, you win!"
+//     stopGame();
+//   }
+//  }
 
 function stopGame(){
   console.log("stopGame function called");

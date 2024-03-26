@@ -1,8 +1,7 @@
 * {
     box-sizing: border-box;
-    /* font-family: Arial, Helvetica, sans-serif; */
-    padding: 0;
     margin: 0;
+    padding: 0;
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -43,7 +42,7 @@ header {
 
 #message {
     font-size: 20px;
-    font-weight: bold;
+    font-weight: 700;
     margin: 5px;
 }
 
@@ -57,12 +56,10 @@ button {
 }
 
 .flags {
-    /* display: grid;
-    grid-template-columns: auto auto auto; */
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;
-    width: 400px;
+    width: 405px;
 }
 
 .flags>img {
@@ -80,14 +77,11 @@ button {
 }
 
 .gameBoard {
-    /* display: grid;
-    grid-template-columns: auto auto auto; */
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;
-    height: 407px;
-    width: 407px;
-    border: 1px solid black;
+    height: 405px;
+    width: 405px;
 }
 
 .gameBoard>div {
