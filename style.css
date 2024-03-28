@@ -18,8 +18,10 @@ body {
     margin-top: 10px;
 }
 
-header {
-    margin: 0 auto;
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .dashboard {
@@ -27,32 +29,39 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 5px;
+    margin: 3px;
 }
 
 #timer {
-    font-size: 20px;
-    margin: 5px;
+    font-size: 18px;
+    margin: 3px;
 }
 
 #score {
-    font-size: 20px;
-    margin: 5px;
+    font-size: 18px;
+    margin: 3px;
 }
 
 #message {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 700;
-    margin: 5px;
+    margin: 3px;
 }
 
 button {
     background-color: darkgreen;
     color: white;
     font-size: 16px;
+    border: none;
     border-radius: 10px;
     height: 30px;
     width: 125px;
+    padding: 2px;
+    margin: 3px;
+}
+
+button:hover {
+    cursor:pointer;
 }
 
 .flags {
@@ -62,7 +71,7 @@ button {
     width: 405px;
 }
 
-.flags>img {
+.flags > img {
     width: 112px;
     height: 84px;
     margin: 10px;
@@ -84,7 +93,7 @@ button {
     width: 405px;
 }
 
-.gameBoard>div {
+.gameBoard > div {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -95,9 +104,13 @@ button {
     border: 1px solid black;
 }
 
-footer {
+.footer {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 10px;
+}
+
+a:link {
+    text-decoration: none;
 }
