@@ -1,4 +1,4 @@
-const countries = {
+const data = {
     "ad": "Andorra",
     "ae": "United Arab Emirates",
     "af": "Afghanistan",
@@ -68,6 +68,7 @@ const countries = {
     "er": "Eritrea",
     "es": "Spain",
     "et": "Ethiopia",
+    "eu": "European Union",
     "fi": "Finland",
     "fj": "Fiji",
     "fk": "Falkland Islands",
@@ -235,6 +236,7 @@ const countries = {
     "ua": "Ukraine",
     "ug": "Uganda",
     "um": "United States Minor Outlying Islands",
+    "un": "United Nations",
     "us": "United States",
     "uy": "Uruguay",
     "uz": "Uzbekistan",
