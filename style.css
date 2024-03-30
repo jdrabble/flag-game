@@ -15,7 +15,7 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 .header {
@@ -29,23 +29,23 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 3px;
+    margin: 2px;
 }
 
 #timer {
     font-size: 18px;
-    margin: 3px;
+    margin: 2px;
 }
 
 #score {
     font-size: 18px;
-    margin: 3px;
+    margin: 2px;
 }
 
 #message {
     font-size: 18px;
     font-weight: 700;
-    margin: 3px;
+    margin: 2px;
 }
 
 button {
@@ -68,13 +68,13 @@ button:hover {
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;
-    width: 405px;
+    width: 330px;
 }
 
 .flags > img {
-    width: 112px;
-    height: 84px;
-    margin: 10px;
+    width: 96px;
+    height: 72px;
+    margin: 7px;
 }
 
 .draggble {
@@ -89,8 +89,8 @@ button:hover {
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;
-    height: 405px;
-    width: 405px;
+    height: 330px;
+    width: 330px;
 }
 
 .gameBoard > div {
@@ -99,8 +99,8 @@ button:hover {
     align-items: center;
     text-align: center;
     padding: 5px;
-    height: 135px;
-    width: 135px;
+    height: 110px;
+    width: 110px;
     border: 1px solid black;
 }
 
@@ -108,7 +108,7 @@ button:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 a:link {

@@ -42,7 +42,7 @@ for (i = 0; i < countryShortList.length; i++) {
   flag.setAttribute('id', countryShortList[i][0]);
   flag.setAttribute('class', 'draggable');
   flag.setAttribute('draggable', 'true');
-  flag.src = `https://flagcdn.com/112x84/${countryShortList[i][0]}.png`;
+  flag.src = `https://flagcdn.com/96x72/${countryShortList[i][0]}.png`;
   flag.addEventListener("dragstart", dragStart);
   flag.addEventListener("dragend", dragEnd);
   flags.appendChild(flag);
