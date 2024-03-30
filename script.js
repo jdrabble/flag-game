@@ -17,7 +17,7 @@ const timer = document.querySelector('#timer');
 const message = document.querySelector('#message');
 const score = document.querySelector('#score');
 
-btn.addEventListener('click', renderGame);
+btn.addEventListener('click', renderGame, { once: true });
 
 function initalizeGame() {
 randomisedCountries = countries.sort(() => Math.random() - 0.5);
