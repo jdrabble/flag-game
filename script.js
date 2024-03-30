@@ -144,8 +144,10 @@ function displayButton() {
   btn.addEventListener('click', refresh);
 }
 
+initalizeGame();
+
 function refresh() {
   window.location.reload();
 }
 
-initalizeGame();
+
