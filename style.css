@@ -8,8 +8,8 @@
   }
 
 body {
-    background-color: lightblue;
-    background-image: url("./sky.jpg");
+    /* background-color: lightblue;  */
+    background-color: rgb(182, 215, 228); 
 }
 
 .container {
@@ -110,6 +110,10 @@ button:hover {
     justify-content: center;
     align-items: center;
     margin-top: 5px;
+}
+
+a {
+    color: black;
 }
 
 a:link {

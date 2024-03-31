@@ -43,8 +43,8 @@ for (i = 0; i < countryShortList.length; i++) {
   flag.setAttribute('class', 'draggable');
   flag.setAttribute('draggable', 'true');
   flag.src = `https://flagcdn.com/96x72/${countryShortList[i][0]}.png`;
-  flag.addEventListener("dragstart", dragStart);
-  flag.addEventListener("dragend", dragEnd);
+  flag.addEventListener('dragstart', dragStart);
+  flag.addEventListener('dragend', dragEnd);
   flags.appendChild(flag);
 }
 
@@ -52,11 +52,11 @@ for (i = 0; i < countryShortListReshuffled.length; i++) {
   boardSquares[i].setAttribute('id', countryShortListReshuffled[i][0]);
   boardSquares[i].setAttribute('class', 'droppable');
   boardSquares[i].innerHTML = `${countryShortListReshuffled[i][1]}`
-  boardSquares[i].addEventListener("dragover", dragOver);
-  boardSquares[i].addEventListener("drop", drop);
+  boardSquares[i].addEventListener('dragover', dragOver);
+  boardSquares[i].addEventListener('drop', drop);
 }
 
-btn.style.display = "none";
+btn.style.display = 'none';
 
 countDownWinCheck();
 
@@ -71,12 +71,12 @@ function dropMovePlayerMessage(color, text) {
 
 function dragStart(e) {
   e.dataTransfer.setData('text/plain', e.target.id);
-  e.target.classList.add("dragging");
+  e.target.classList.add('dragging');
   // console.log('dragstart');
 }
 
 function dragEnd(e){
-  e.target.classList.remove("dragging");
+  e.target.classList.remove('dragging');
   // console.log('dragend');
 }
 
@@ -88,25 +88,25 @@ function dragOver(e){
 function drop(e){
   e.preventDefault();
   // console.log(drop);
-  droppableElementData = e.target.getAttribute("id");
+  droppableElementData = e.target.getAttribute('id');
   const data = e.dataTransfer.getData('text/plain');
   
   if (data === droppableElementData && secondsRemaining !== 0){
-   e.target.innerText = "";
-   e.target.style.border = "3px solid green";
+   e.target.innerText = '';
+   e.target.style.border = '3px solid green';
    e.target.appendChild(document.getElementById(data));
    correctAnswers++;
   //  console.log(correctAnswers);
-   dropMovePlayerMessage("green", "Correct answer!");
+   dropMovePlayerMessage('green', 'Correct answer!');
    score.innerText = `Completed score: ${Math.round((correctAnswers/9)*100)}%`;
-   e.target.removeEventListener("drop", drop);
+   e.target.removeEventListener('drop', drop);
    const droppedImage = document.querySelector(`#${data} >img`);
    droppedImage.setAttribute('draggable', 'false');
   }
   else if (data !== droppableElementData && secondsRemaining !== 0){
-    e.target.style.border = "3px solid red";
-    // console.log("wrong");
-    dropMovePlayerMessage("red", "Wrong answer!");
+    e.target.style.border = '3px solid red';
+    // console.log('wrong');
+    dropMovePlayerMessage('red', 'Wrong answer!');
     score.innerText = `Completed score: ${Math.round((correctAnswers/9)*100)}%`;
   }
 }
@@ -115,22 +115,22 @@ function countDownWinCheck(){
   secondsRemaining--;
   //console.log(secondsRemaining, correctAnswers);
   if (secondsRemaining === 0 && correctAnswers <9){
-    //console.log("time over due to out of time");
-    dropMovePlayerMessage("red", "Out of time, game over!");
+    //console.log('time over due to out of time');
+    dropMovePlayerMessage('red', 'Out of time, game over!');
     clearInterval(clock);
     stopGame();
   }
   else if (correctAnswers === 9){
-    //console.log("time over due to winner");
+    //console.log('time over due to winner');
     clearInterval(clock);
-    dropMovePlayerMessage("green", "Congratulations, you win!");
+    dropMovePlayerMessage('green', 'Congratulations, you win!');
     stopGame();
   }
   timer.innerHTML = `Seconds remaining: ${secondsRemaining}`;
 };
 
 function stopGame(){
-  //console.log("stopGame function called");
+  //console.log('stopGame function called');
   const allFlagImages = document.querySelectorAll('img');
   for (i=0; i<allFlagImages.length; i++) {
     allFlagImages[i].setAttribute('draggable', 'false');
@@ -139,8 +139,8 @@ function stopGame(){
 }
 
 function displayButton() {
-  btn.style.display = "inline-block";
-  btn.innerText = "Refresh";
+  btn.style.display = 'inline-block';
+  btn.innerText = 'Refresh';
   btn.addEventListener('click', refresh);
 }
 
@@ -149,5 +149,3 @@ function refresh() {
 }
 
 initalizeGame();
-
-
