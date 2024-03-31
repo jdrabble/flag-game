@@ -11,7 +11,7 @@ let countryShortList;
 let countryShortListReshuffled = [];
 
 const btn = document.querySelector('button');
-const boardSquares = document.querySelectorAll('.gameBoard > div');
+const boardSquares = document.querySelectorAll('.gameboard > div');
 const flags = document.querySelector('.flags');
 const timer = document.querySelector('#timer');
 const message = document.querySelector('#message');
@@ -25,8 +25,8 @@ randomisedCountries = countries.sort(() => Math.random() - 0.5);
 
 countryShortList = randomisedCountries.splice(0, 9);
 
-countryShortList.forEach(item => {
-  countryShortListReshuffled.push(item);
+countryShortList.forEach(country => {
+  countryShortListReshuffled.push(country);
   countryShortListReshuffled.sort(() => Math.random() - 0.5);
 });
 // console.log(countryShortList);

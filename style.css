@@ -9,6 +9,7 @@
 
 body {
     background-color: lightblue;
+    background-image: url("./sky.jpg");
 }
 
 .container {
@@ -61,7 +62,7 @@ button {
 }
 
 button:hover {
-    cursor:pointer;
+    cursor: pointer;
 }
 
 .flags {
@@ -82,10 +83,10 @@ button:hover {
 }
 
 .dragging {
-    opacity: 0.25;
+    opacity: 0;
 }
 
-.gameBoard {
+.gameboard {
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;
@@ -93,7 +94,7 @@ button:hover {
     width: 330px;
 }
 
-.gameBoard > div {
+.gameboard > div {
     display: flex;
     justify-content: center;
     align-items: center;

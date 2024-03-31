@@ -237,7 +237,7 @@ const data = {
     "ug": "Uganda",
     "um": "United States Minor Outlying Islands",
     "un": "United Nations",
-    "us": "United States",
+    "us": "United States of America",
     "uy": "Uruguay",
     "uz": "Uzbekistan",
     "va": "Vatican City (Holy See)",
