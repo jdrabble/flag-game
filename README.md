@@ -8,7 +8,7 @@ Drag and drop each country flag onto the correct grid board square.
 
 ## Game Rules
 
-A player needs to drag and drop each of the randomly displayed country flags onto the game board square displaying the correct country name. A player needs to correctly complete the game before the second countdown timer reaches zero.
+A player needs to drag and drop each of the randomly displayed country flags onto the game board square displaying the correct country name. A player needs to correctly complete the game before the second countdown timer reaches zero. In the first version of this game there will be nine flags, a nine square gameboard, and 60 seconds to complete each game.
 
 [Play Game Here](https://jdrabble.github.io/flag-game/)
 
