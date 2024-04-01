@@ -6,11 +6,13 @@ Flags of world drag and drop board game.
 
 Drag and drop each country flag onto the correct grid board square.
 
-## Game Rules
+## Game Rules/Getting Started
 
-A player needs to drag and drop each of the randomly displayed country flags onto the game board square displaying the correct country name. A player needs to correctly complete the game before the second countdown timer reaches zero. In the first version of this game there will be nine flags, a nine square gameboard, and 60 seconds to complete each game.
+A player needs to drag and drop the nine randomly displayed country flags onto the gameboard squares displaying the correct country name. A player needs to correctly complete the game before the 60 second countdown timer reaches zero.
 
 [Play Game Here](https://jdrabble.github.io/flag-game/)
+
+![screenshot!](./livescreenshot.png "live game screenshot")
 
 ## User Story
 
@@ -42,4 +44,4 @@ As a player:
 
 ## Future Developments
 
-- Add progressively more difficult levels, where the flags get harder (the game starts with the most common/major nation flags and increasingly shows less widely recognised/smaller nation flags) and the time to complete the game gets shorter.
+- Add progressively more difficult levels, where the flags get harder (the game starts with the most common/major nation flags and increasingly shows less widely recognised/smaller nation flags).
