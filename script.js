@@ -2,7 +2,7 @@
 //console.log(Object.keys(data).length);
 const countries = Object.entries(data);
 let correctAnswers = 0;
-let secondsRemaining = 61;
+let secondsRemaining = 62;
 let clock;
 
 // console.log(countries);
@@ -58,7 +58,9 @@ for (i = 0; i < countryShortListReshuffled.length; i++) {
 
 btn.style.display = 'none';
 
-countDownWinCheck();
+// countDownWinCheck();
+
+setTimeout(countDownWinCheck, 1000);
 
 clock = setInterval(countDownWinCheck, 1000);
 
@@ -113,7 +115,7 @@ function drop(e){
 
 function countDownWinCheck(){
   secondsRemaining--;
-  //console.log(secondsRemaining, correctAnswers);
+  console.log(secondsRemaining, correctAnswers);
   if (secondsRemaining === 0 && correctAnswers <9){
     //console.log('time over due to out of time');
     dropMovePlayerMessage('red', 'Out of time, game over!');
