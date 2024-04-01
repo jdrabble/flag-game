@@ -12,7 +12,7 @@ A player needs to drag and drop the nine randomly displayed country flags onto t
 
 [Play Game Here](https://jdrabble.github.io/flag-game/)
 
-![screenshot!](./livescreenshot.png "live game screenshot")
+![live game screenshot!](./livescreenshot.png "live game screenshot")
 
 ## User Story
 

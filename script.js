@@ -1,11 +1,8 @@
-//console.log(data);
-//console.log(Object.keys(data).length);
 const countries = Object.entries(data);
 let correctAnswers = 0;
 let secondsRemaining = 62;
 let clock;
 
-// console.log(countries);
 let randomisedCountries;
 let countryShortList; 
 let countryShortListReshuffled = [];
@@ -21,7 +18,6 @@ btn.addEventListener('click', renderGame, { once: true });
 
 function initalizeGame() {
 randomisedCountries = countries.sort(() => Math.random() - 0.5);
-// console.log(randomisedCountries);
 
 countryShortList = randomisedCountries.splice(0, 9);
 
@@ -29,13 +25,10 @@ countryShortList.forEach(country => {
   countryShortListReshuffled.push(country);
   countryShortListReshuffled.sort(() => Math.random() - 0.5);
 });
-// console.log(countryShortList);
-// console.log(countryShortListReshuffled);
+
 };
 
 function renderGame(){
-// console.log(e.target.id);
-// console.log(boardSquares);
 
 for (i = 0; i < countryShortList.length; i++) {
   const flag = document.createElement('img');
@@ -58,8 +51,6 @@ for (i = 0; i < countryShortListReshuffled.length; i++) {
 
 btn.style.display = 'none';
 
-// countDownWinCheck();
-
 setTimeout(countDownWinCheck, 1000);
 
 clock = setInterval(countDownWinCheck, 1000);
@@ -74,22 +65,18 @@ function dropMovePlayerMessage(color, text) {
 function dragStart(e) {
   e.dataTransfer.setData('text/plain', e.target.id);
   e.target.classList.add('dragging');
-  // console.log('dragstart');
 }
 
 function dragEnd(e){
   e.target.classList.remove('dragging');
-  // console.log('dragend');
 }
 
 function dragOver(e){
   e.preventDefault();
-  // console.log('dragover');
 }
 
 function drop(e){
   e.preventDefault();
-  // console.log(drop);
   droppableElementData = e.target.getAttribute('id');
   const data = e.dataTransfer.getData('text/plain');
   
@@ -98,7 +85,7 @@ function drop(e){
    e.target.style.border = '3px solid green';
    e.target.appendChild(document.getElementById(data));
    correctAnswers++;
-  //  console.log(correctAnswers);
+   
    dropMovePlayerMessage('green', 'Correct answer!');
    score.innerText = `Completed score: ${Math.round((correctAnswers/9)*100)}%`;
    e.target.removeEventListener('drop', drop);
@@ -107,7 +94,6 @@ function drop(e){
   }
   else if (data !== droppableElementData && secondsRemaining !== 0){
     e.target.style.border = '3px solid red';
-    // console.log('wrong');
     dropMovePlayerMessage('red', 'Wrong answer!');
     score.innerText = `Completed score: ${Math.round((correctAnswers/9)*100)}%`;
   }
@@ -115,15 +101,13 @@ function drop(e){
 
 function countDownWinCheck(){
   secondsRemaining--;
-  // console.log(secondsRemaining, correctAnswers);
+
   if (secondsRemaining === 0 && correctAnswers <9){
-    //console.log('time over due to out of time');
     dropMovePlayerMessage('red', 'Out of time, game over!');
     clearInterval(clock);
     stopGame();
   }
   else if (correctAnswers === 9){
-    //console.log('time over due to winner');
     clearInterval(clock);
     dropMovePlayerMessage('green', 'Congratulations, you win!');
     stopGame();
@@ -132,7 +116,6 @@ function countDownWinCheck(){
 };
 
 function stopGame(){
-  //console.log('stopGame function called');
   const allFlagImages = document.querySelectorAll('img');
   for (i=0; i<allFlagImages.length; i++) {
     allFlagImages[i].setAttribute('draggable', 'false');
