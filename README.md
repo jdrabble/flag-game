@@ -4,7 +4,7 @@ Flags of world drag and drop board game.
 
 ## Game Description/Objective
 
-Drag and drop each country flag onto the correct grid board square. The educational game includes all 254 country flags, plus the United Nations and European Union flags.
+Drag and drop each country flag onto the correct gameboard square. This desktop based educational game includes all 254 country flags, plus the United Nations and European Union flags.
 
 ## Game Rules/Getting Started
 
@@ -18,12 +18,12 @@ A player needs to drag and drop the nine randomly displayed country flags onto t
 
 As a player:
 
-- I want to start the game to display the randomised country flags and country names in the game board squares.
-- I want the flags to be displayed in a different order to the names of the corresponding countries in the grid board squares.
-- I want to be able to drag and drop a flag onto the correct square on the board.
-- I do not want to be able to drop a flag onto the incorrect square on the board.
+- I want to start the game to display the randomised country flags and country names in the gameboard squares.
+- I want the flags to be displayed in a different order to the names of the corresponding countries in the gameboard squares.
+- I want to be able to drag and drop a flag onto the correct square on the gameboard.
+- I do not want to be able to drop a flag onto the incorrect square on the gameboard.
 - I want to see how much time I have left remaining during the game in play.
-- I want to see a correct or incorrect message after I make a drop move.
+- I want to see a correct or incorrect message, as appropriate, after I make a drop move.
 - I want to be able to see a score of how many flags I have correctly dropped during the game.
 - I want to see a congratulations message if I successfully complete the game.
 - I want to see a game over message if the game is not completed within the allotted time.

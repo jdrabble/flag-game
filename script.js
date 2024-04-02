@@ -103,8 +103,8 @@ function countDownWinCheck(){
   secondsRemaining--;
 
   if (secondsRemaining === 0 && correctAnswers <9){
-    dropMovePlayerMessage('red', 'Out of time, game over!');
     clearInterval(clock);
+    dropMovePlayerMessage('red', 'Out of time, game over!');
     stopGame();
   }
   else if (correctAnswers === 9){
