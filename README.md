@@ -4,7 +4,7 @@ Flags of world drag and drop board game.
 
 ## Game Description/Objective
 
-Drag and drop each country flag onto the correct grid board square.
+Drag and drop each country flag onto the correct grid board square. The educational game includes all 254 country flags, plus the United Nations and European Union flags.
 
 ## Game Rules/Getting Started
 
