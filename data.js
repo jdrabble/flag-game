@@ -1,4 +1,4 @@
-const data = {
+const gameData = {
     "ad": "Andorra",
     "ae": "United Arab Emirates",
     "af": "Afghanistan",
