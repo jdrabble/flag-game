@@ -22,7 +22,8 @@ As a player:
 - I want the flags to be displayed in a different order to the names of the corresponding countries in the gameboard squares.
 - I want to be able to drag and drop a flag onto the correct square on the gameboard.
 - I do not want to be able to drop a flag onto the incorrect square on the gameboard.
-- I do not want to be able to drag a flag that has already been correctly dropped.
+- I do not want to be able to drag or move a flag that has already been correctly dropped on a gameboard square.
+- I do not want to be able to drop or move a flag onto a gamebboard square that already has a correct flag dropped on it.
 - I want to see how much time I have left remaining during the game in play.
 - I want to see correct or incorrect messages, as appropriate, after I make a drop move.
 - I want to be able to see a score of how many flags I have correctly dropped during the game.
